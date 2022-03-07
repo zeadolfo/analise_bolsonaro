@@ -24,6 +24,6 @@ model {
 	vector[N] summands;
 	for (n in 1:N) 
 		summands[n] = log_frank_copula(u[n], v[n], theta );
-	target += normal_lpdf( theta | 0 , 1000); 
+	target += normal_lpdf( theta | -100 , 10		); 
 	target += summands;
 }
